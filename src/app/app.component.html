@@ -1,0 +1,55 @@
+<!-- <!-- <h1>Angular App</h1>
+<p> {{ message }} </p>
+
+<img [src]="imgUrl" alt=""> -->
+<!-- <h1 [class.text-red] = "bool" >Angular App</h1>
+<h1 [style.color] = "bool ?  'red' : ''  " >Style Binding</h1> -->
+
+<!-- event binding -->
+
+<!-- <button (click) = "buttonClick()"> Click Me </button> --> -->
+
+<!-- TWO WAY DATA BINDING -->
+<!-- <input type="text" (keyup.enter)="onKeyup()" #username > -->
+
+<!-- <input type="text" [(ngModel)] = "userName" (keyup.enter)="onKeyup()" > -->
+
+<p>{{ postArray }}</p>
+
+<ul>
+    <li>{{ postArray[0] }}</li>
+    <li>{{ postArray[1] }}</li>
+    <li>{{ postArray[2] }}</li>
+    <li>{{ postArray[3] }}</li>
+    <li>{{ postArray[4] }}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let post of postArray">{{ post }}</li>
+</ul>
+
+<!-- <ul>
+    <li *ngFor="let post of objArray">{{ post | json }}</li>
+</ul> -->
+
+<ul>
+    <li *ngFor="let posts of objArray">{{ posts.postTitle }}</li>
+</ul>
+
+<!-- ADD REMOVE -->
+<p>Fetching Object Array</p>
+
+<button (click)="addNew()">Add New Data</button>
+
+<div *ngIf=' objArray.length > 0 ' >
+    <ul>
+        <li *ngFor="let post of objArray; let i = index">
+           {{ i }} {{ post.postTitle }}
+            <button (click)="onDelete(i)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf=' objArray.length == 0'>
+    <p>There is no Data to fetch... </p>
+</div>
